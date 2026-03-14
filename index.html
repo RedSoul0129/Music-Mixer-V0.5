@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Mixer Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Studio de Mixage</h1>
+        
+        <div class="track-panel">
+            <h2>Piste Principale</h2>
+            <p>Cette piste garde son rythme original et joue en entier.</p>
+            <input type="file" id="main-audio" accept="audio/*">
+            <audio id="main-preview" controls></audio>
+            <div class="input-group">
+                <label for="main-bpm">BPM (Tempo) de cette piste :</label>
+                <input type="number" id="main-bpm" placeholder="Ex: 120">
+            </div>
+        </div>
+
+        <div class="track-panel">
+            <h2>Piste Secondaire</h2>
+            <p>Cette piste s'ajustera au BPM principal. Tu peux couper des sections.</p>
+            <input type="file" id="sec-audio" accept="audio/*">
+            <audio id="sec-preview" controls></audio>
+            <div class="input-group">
+                <label for="sec-bpm">BPM (Tempo) de cette piste :</label>
+                <input type="number" id="sec-bpm" placeholder="Ex: 128">
+            </div>
+            <div class="input-group">
+                <label>Zone à rendre muette (en secondes) :</label>
+                <input type="number" id="mute-start" placeholder="Début (ex: 10)">
+                <input type="number" id="mute-end" placeholder="Fin (ex: 25)">
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="mix-btn">Lancer le Smart Mix</button>
+            <button id="stop-btn">Arrêter</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
